@@ -169,7 +169,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <button class="menu btn alt" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav id="nav" aria-label="Main">
 <a href="#/story">Story</a><a href="#/comic">Comic</a><a href="#/roadmap">Roadmap</a><a href="#/community">Community</a><a href="#/peek">Sneak peek</a><a href="#/whitelist">Whitelist</a>
-<a class="btn alt" href="https://x.com/Mimicreation_" target="_blank" rel="noopener">X</a>
+<a class="btn alt" href="https://x.com/" target="_blank" rel="noopener">X</a>
 <a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">Mint on OpenSea</a>
 </nav></div></header>
 <main id="main" tabindex="-1">
@@ -178,7 +178,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <span class="eyebrow">A comic universe, starting onchain</span>
 <h1>The first kids hero on <em>Ink.</em></h1>
 <p>Born in the storm. Made to make you smile.</p>
-<div class="chips"><span class="chip">1,111 unique heroes</span><span class="chip">Mint day 1:11</span><span class="chip">Co-write the comic</span></div>
+<div class="chips"><span class="chip">1,111 unique heroes</span><span class="chip">Mint day TBA</span><span class="chip">Co-write the comic</span></div>
 <div class="cta"><a class="btn" href="#/whitelist">Join the whitelist</a><a class="btn alt" href="#/peek">Meet the heroes</a></div>
 </div></section>
 <div class="band" aria-hidden="true"><div id="band"></div></div>
@@ -296,7 +296,7 @@ function route(first){
   if(!first){window.scrollTo(0,0);$('#main').focus({preventScroll:true})}else if(p!=='home')$('#storm').remove();
   reveal();
 }
-const words=["1,111 heroes","Mint day 1:11","Co-write the comic","Earn $ZEN Points","Born in the storm","Your ZEN, your IP"];
+const words=["1,111 heroes","Mint day TBA","Co-write the comic","Earn $ZEN Points","Born in the storm","Your ZEN, your IP"];
 $('#band').innerHTML=(words.map(w=>w+'<span>&#9829;</span>').join('')).repeat(6);
 const set=A.map((s,i)=>`<img src="${s}" alt="${NAMES[i]}">`).join('');$('#strip').innerHTML=(set+set).repeat(2);
 $('#peekGrid').innerHTML=`<figure class="wide"><img src="${B}" alt="ZEN crouching on a rooftop"><figcaption>ZEN is on the move</figcaption></figure>`+A.map((s,i)=>`<figure><img src="${s}" alt="${NAMES[i]}" loading="lazy"><figcaption>${NAMES[i]}</figcaption></figure>`).join('');
