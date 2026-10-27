@@ -147,7 +147,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 .chip{font:1.15rem Bangers,sans-serif;letter-spacing:.05em;padding:.3em .9em;border:3px solid #fff;border-radius:999px;background:var(--zen);box-shadow:3px 3px 0 #000;animation:pulse 2.4s ease-in-out infinite}
 .chip:nth-child(2){background:var(--heart);animation-delay:.4s}.chip:nth-child(3){background:#0A8CFF;animation-delay:.8s}
 @keyframes pulse{50%{transform:translateY(-4px) rotate(-1.5deg)}}
-@media(max-width:820px){.hero2{align-items:flex-end;min-height:680px}.hero2::after{background:linear-gradient(0deg,rgba(7,11,36,.96) 38%,transparent 85%)}.hero2 .bg{object-position:56% 30%}.hero2 .wrap{padding:3rem 0}}
+@media(max-width:820px){.hero2{display:block;min-height:0}.hero2 .bg{position:relative;display:block;width:100%;height:auto;aspect-ratio:16/10;object-position:54% 40%;animation:none;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}.hero2::after{display:none}.hero2 .wrap{padding:.5rem 0 3rem;margin-top:-1.2rem}.hero2 h1{font-size:clamp(3rem,13vw,4.4rem)}.hero2 p{max-width:none}}
 .strip{overflow:hidden;padding:.4rem 0 1.6rem}.strip div{display:flex;gap:1.2rem;width:max-content;animation:slide 45s linear infinite}
 .strip:hover div{animation-play-state:paused}
 .strip img{width:230px;border:3px solid var(--line);border-radius:20px;box-shadow:5px 5px 0 var(--line);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
@@ -161,6 +161,13 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s cubic-bezier(.3,1.3,.5,1)}.rv.in{opacity:1;transform:none}
 .peek figure.rv.in:nth-child(odd){transform:rotate(-1.5deg)}.peek figure.rv.in:nth-child(even){transform:rotate(1.5deg)}.peek figure.wide.rv.in{transform:none}
 .join{background:linear-gradient(135deg,#7FE3FF,#C3B1FF 55%,#FFC46B)}
+.tasks{border:3px solid #1B1730;border-radius:16px;padding:1rem 1rem .4rem;margin:0 0 1.2rem;background:#F6FBFF}
+.tasks legend{font-weight:800;padding:0 .4rem}
+.task{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-bottom:.8rem}
+.task label{margin:0;display:flex;align-items:center;gap:.6rem;flex:1 1 200px}
+.task input{width:22px;height:22px;accent-color:#7C4DFF;margin:0;flex:none}
+.task .btn{padding:.35em .9em;font-size:.9rem;box-shadow:3px 3px 0 #1B1730}
+.task:not(.ready) label{opacity:.55}.task input:disabled{cursor:not-allowed}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero2 .bg,.chip,.strip div{animation:none}}
 </style></head><body>
 <div id="storm" aria-hidden="true"><p>The world was very grey...</p></div>
@@ -169,7 +176,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <button class="menu btn alt" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav id="nav" aria-label="Main">
 <a href="#/story">Story</a><a href="#/comic">Comic</a><a href="#/roadmap">Roadmap</a><a href="#/community">Community</a><a href="#/peek">Sneak peek</a><a href="#/whitelist">Whitelist</a>
-<a class="btn alt" href="https://x.com/" target="_blank" rel="noopener">X</a>
+<a class="btn alt" href="https://x.com/Mimicreation_" target="_blank" rel="noopener">X</a>
 <a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">Mint on OpenSea</a>
 </nav></div></header>
 <main id="main" tabindex="-1">
@@ -178,7 +185,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <span class="eyebrow">A comic universe, starting onchain</span>
 <h1>The first kids hero on <em>Ink.</em></h1>
 <p>Born in the storm. Made to make you smile.</p>
-<div class="chips"><span class="chip">1,111 unique heroes</span><span class="chip">Mint day TBA</span><span class="chip">Co-write the comic</span></div>
+<div class="chips"><span class="chip">1,111 unique heroes</span><span class="chip">Mint day 1:11</span><span class="chip">Co-write the comic</span></div>
 <div class="cta"><a class="btn" href="#/whitelist">Join the whitelist</a><a class="btn alt" href="#/peek">Meet the heroes</a></div>
 </div></section>
 <div class="band" aria-hidden="true"><div id="band"></div></div>
@@ -261,7 +268,13 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <form id="wl" class="panel" novalidate>
 <label>X handle<input type="text" name="x" placeholder="@yourhandle" autocomplete="off" required></label>
 <label>Wallet address<input type="text" name="wallet" placeholder="0x..." autocomplete="off" required><small>Paste the address you'll mint with.</small></label>
-<label>Email (optional)<input type="email" name="email" placeholder="you@example.com" autocomplete="email"></label>
+<fieldset class="tasks"><legend>Complete these 3 tasks</legend>
+<small style="margin-bottom:.9rem">Tap each button first. Its box unlocks after you come back from X.</small>
+<div class="task" data-t="follow"><label><input type="checkbox" name="t_follow" disabled> Follow ZEN on X</label><a class="btn alt" href="https://x.com/Mimicreation_" target="_blank" rel="noopener">Open X</a></div>
+<div class="task" data-t="like"><label><input type="checkbox" name="t_like" disabled> Like + repost the pinned post</label><a class="btn alt" href="https://x.com/Mimicreation_" target="_blank" rel="noopener">Open post</a></div>
+<div class="task" data-t="comment"><label><input type="checkbox" name="t_comment" disabled> Comment on the pinned post</label><a class="btn alt" href="https://x.com/Mimicreation_" target="_blank" rel="noopener">Open post</a></div>
+</fieldset>
+<label>Link to your comment<input type="text" name="comment" inputmode="url" placeholder="https://x.com/yourhandle/status/..." autocomplete="off" required><small>Open your comment on X, tap share, copy the link and paste it here.</small></label>
 <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <fieldset class="cap"><legend id="capQ">Are you a human?</legend><div class="opts" id="opts" role="group" aria-labelledby="capQ"></div></fieldset>
 <button class="btn" type="submit">Save my spot</button>
@@ -296,7 +309,7 @@ function route(first){
   if(!first){window.scrollTo(0,0);$('#main').focus({preventScroll:true})}else if(p!=='home')$('#storm').remove();
   reveal();
 }
-const words=["1,111 heroes","Mint day TBA","Co-write the comic","Earn $ZEN Points","Born in the storm","Your ZEN, your IP"];
+const words=["1,111 heroes","Mint day 1:11","Co-write the comic","Earn $ZEN Points","Born in the storm","Your ZEN, your IP"];
 $('#band').innerHTML=(words.map(w=>w+'<span>&#9829;</span>').join('')).repeat(6);
 const set=A.map((s,i)=>`<img src="${s}" alt="${NAMES[i]}">`).join('');$('#strip').innerHTML=(set+set).repeat(2);
 $('#peekGrid').innerHTML=`<figure class="wide"><img src="${B}" alt="ZEN crouching on a rooftop"><figcaption>ZEN is on the move</figcaption></figure>`+A.map((s,i)=>`<figure><img src="${s}" alt="${NAMES[i]}" loading="lazy"><figcaption>${NAMES[i]}</figcaption></figure>`).join('');
@@ -315,24 +328,33 @@ function newCap(){
     b.onclick=()=>{[...o.children].forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');ok=(n===right)};o.append(b)});
 }
 newCap();
+const done={follow:0,like:0,comment:0};
+document.querySelectorAll('.task').forEach(t=>{const k=t.dataset.t,cb=t.querySelector('input'),a=t.querySelector('a');let opened=0,away=0;
+  const unlock=()=>{if(opened&&!cb.dataset.u){cb.dataset.u=1;cb.disabled=false;t.classList.add('ready')}};
+  a.addEventListener('click',()=>{opened=Date.now();setTimeout(unlock,12000)});
+  document.addEventListener('visibilitychange',()=>{if(!opened)return;if(document.hidden)away=1;else if(away)setTimeout(unlock,600)});
+  cb.addEventListener('change',()=>{if(!cb.dataset.u){cb.checked=false;return}done[k]=cb.checked?1:0})});
 const msg=$('#msg');
 function say(t,c){msg.textContent=t;msg.className=c}
 
 $('#wl').addEventListener('submit',async e=>{
   e.preventDefault();const f=new FormData(e.target);
-  const x=(f.get('x')||'').trim(),w=(f.get('wallet')||'').trim(),m=(f.get('email')||'').trim();
+  const x=(f.get('x')||'').trim(),w=(f.get('wallet')||'').trim(),c=(f.get('comment')||'').trim();
   if(f.get('website'))return;
   if(!/^@?[A-Za-z0-9_]{1,15}$/.test(x))return say("Enter your X handle, like @Mimicreation_.",'no');
   if(!/^0x[a-fA-F0-9]{40}$/.test(w))return say("That wallet address doesn't look right. It should start with 0x and be 42 characters.",'no');
-  if(m&&!/^\S+@\S+\.\S+$/.test(m))return say("That email doesn't look right. Fix it or leave it empty.",'no');
+  if(!(done.follow&&done.like&&done.comment))return say("Open each task link first, then tick its box once you've done it.",'no');
+  const cm=c.match(/^https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})\/status\/(\d+)/i);
+  if(!cm)return say("Paste the link to your comment on X. It looks like x.com/yourhandle/status/123...",'no');
+  if(cm[1].toLowerCase()!==x.replace(/^@/,'').toLowerCase())return say("That comment link belongs to a different X account than the handle you entered.",'no');
   if(Date.now()-t0<4000)return say("Almost there. Give it a couple more seconds and try again.",'no');
   if(!ok){newCap();return say("That wasn't the right ZEN. Try this new one.",'no')}
-  const rec={x_handle:x.replace(/^@/,''),wallet:w,email:m||null};
+  const rec={x_handle:x.replace(/^@/,''),wallet:w,comment_link:cm[0]};
   const btn=e.target.querySelector('button[type=submit]');btn.disabled=true;
   try{
     const r=await fetch(SB_URL+'/rest/v1/whitelist',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(rec)});
     if(!r.ok){if(r.status===409)return say("That wallet or handle is already on the list.",'no');throw 0}
-    say("You're on the list. Welcome, co-creator!",'ok');e.target.reset();newCap();t0=Date.now();
+    say("You're on the list. Welcome, co-creator!",'ok');e.target.reset();newCap();t0=Date.now();done.follow=done.like=done.comment=0;document.querySelectorAll('.task').forEach(t=>{const c=t.querySelector('input');c.disabled=true;delete c.dataset.u;t.classList.remove('ready')});
   }catch(_){say("That didn't send. Check your connection and try again.",'no')}
   finally{btn.disabled=false}
 });
