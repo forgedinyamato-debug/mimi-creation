@@ -177,7 +177,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <button class="menu btn alt" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav id="nav" aria-label="Main">
 <a href="#/story">Story</a><a href="#/comic">Comic</a><a href="#/roadmap">Roadmap</a><a href="#/community">Community</a><a href="#/peek">Sneak peek</a><a href="#/whitelist">Whitelist</a>
-<a class="btn alt" href="https://x.com" target="_blank" rel="noopener">X</a>
+<a class="btn alt" href="https://x.com/Zenvoid_Nft/" target="_blank" rel="noopener">X</a>
 <a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">Mint on OpenSea</a>
 </nav></div></header>
 <main id="main" tabindex="-1">
@@ -271,11 +271,11 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 <label>Wallet address<input type="text" name="wallet" placeholder="0x..." autocomplete="off" required><small>Paste the address you'll mint with.</small></label>
 <fieldset class="tasks"><legend>Complete these 3 tasks</legend>
 <small style="margin-bottom:.9rem">Tap each button first. Its box unlocks after you come back from X.</small>
-<div class="task" data-t="follow"><label><input type="checkbox" name="t_follow" disabled> Follow ZEN on X</label><a class="btn alt" href="https://x.com" target="_blank" rel="noopener">Open X</a></div>
-<div class="task" data-t="like"><label><input type="checkbox" name="t_like" disabled> Like + repost the pinned post</label><a class="btn alt" href="https://x.com" target="_blank" rel="noopener">Open post</a></div>
-<div class="task" data-t="comment"><label><input type="checkbox" name="t_comment" disabled> Comment on the pinned post</label><a class="btn alt" href="https://x.com" target="_blank" rel="noopener">Open post</a></div>
+<div class="task" data-t="follow"><label><input type="checkbox" name="t_follow" disabled> Follow ZEN on X</label><a class="btn alt" href="https://x.com/Zenvoid_Nft/" target="_blank" rel="noopener">Open X</a></div>
+<div class="task" data-t="like"><label><input type="checkbox" name="t_like" disabled> Like + repost the pinned post</label><a class="btn alt" href="https://x.com/Zenvoid_Nft/" target="_blank" rel="noopener">Open post</a></div>
+<div class="task" data-t="comment"><label><input type="checkbox" name="t_comment" disabled> Comment on the pinned post</label><a class="btn alt" href="https://x.com/Zenvoid_Nft/" target="_blank" rel="noopener">Open post</a></div>
 </fieldset>
-<label>Link to your comment<input type="text" name="comment" inputmode="url" placeholder="https://x.com/yourhandle/status/..." autocomplete="off" required><small>Open your comment on X, tap share, copy the link and paste it here.</small></label>
+<label>Link to your comment<input type="text" name="comment" inputmode="url" placeholder="https://x.com/Zenvoid_Nft/yourhandle/status/..." autocomplete="off" required><small>Open your comment on X, tap share, copy the link and paste it here.</small></label>
 <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <fieldset class="cap"><legend id="capQ">Are you a human?</legend><div class="opts" id="opts" role="group" aria-labelledby="capQ"></div></fieldset>
 <button class="btn" type="submit">Save my spot</button>
@@ -284,7 +284,7 @@ nav{gap:1.05rem}nav a{font-size:.98rem}
 </main>
 <footer><div class="wrap">
 <div class="fnav"><a href="#/">Home</a><a href="#/story">Story</a><a href="#/comic">Comic</a><a href="#/roadmap">Roadmap</a><a href="#/community">Community</a><a href="#/peek">Sneak peek</a><a href="#/whitelist">Whitelist</a></div>
-<div class="cta"><a class="btn alt" href="https://x.com" target="_blank" rel="noopener">Follow on X</a><a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">Mint on OpenSea</a></div>
+<div class="cta"><a class="btn alt" href="https://x.com/Zenvoid_Nft/" target="_blank" rel="noopener">Follow on X</a><a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">Mint on OpenSea</a></div>
 <p style="margin-inline:auto">ZEN. Made to make you smile.</p>
 <small>NFTs are digital collectibles and their value can go up or down. Only mint from the official links above.</small>
 </div></footer>
@@ -346,7 +346,7 @@ $('#wl').addEventListener('submit',async e=>{
   if(!/^0x[a-fA-F0-9]{40}$/.test(w))return say("That wallet address doesn't look right. It should start with 0x and be 42 characters.",'no');
   if(!(done.follow&&done.like&&done.comment))return say("Open each task link first, then tick its box once you've done it.",'no');
   const cm=c.match(/^https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})\/status\/(\d+)/i);
-  if(!cm)return say("Paste the link to your comment on X. It looks like x.com/yourhandle/status/123...",'no');
+  if(!cm)return say("Paste the link to your comment on X. It looks like x.com/Zenvoid_Nft/yourhandle/status/123...",'no');
   if(cm[1].toLowerCase()!==x.replace(/^@/,'').toLowerCase())return say("That comment link belongs to a different X account than the handle you entered.",'no');
   if(Date.now()-t0<4000)return say("Almost there. Give it a couple more seconds and try again.",'no');
   if(!ok){newCap();return say("That wasn't the right ZEN. Try this new one.",'no')}
